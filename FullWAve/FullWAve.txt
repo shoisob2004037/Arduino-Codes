@@ -1,0 +1,25 @@
+int angle, a, b, angle2, deg1, deg2;
+void setup() {
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+attachInterrupt(1, test2, FALLING);
+attachInterrupt(0, test, RISING);
+}
+void loop() {
+}
+void test2(){
+  deg1=75;
+  angle = (20000/180) *deg1;
+  delayMicroseconds(angle);
+  digitalWrite(5, HIGH);
+  delay(10);
+  digitalWrite(5, LOW);
+}
+void test(){
+  deg2=75;
+  angle2 = (20000/180) *deg2;
+  delayMicroseconds(angle2);
+  digitalWrite(6, HIGH);
+  delay(10);
+  digitalWrite(6, LOW);
+}
